@@ -7,16 +7,17 @@ namespace MatchBrackets
     {
         private const string IgnoreCharacters = "\t\r\n";
 
-        public static string ProcessText(string formula)
+        public static List<BracketContent> ProcessText(string formula)
         {
-            if (string.IsNullOrWhiteSpace(formula)) return formula;
+            
             
             var currentLevel = 0;
-
             var bracketContents = new List<BracketContent>();
+            if (string.IsNullOrWhiteSpace(formula)) return bracketContents;
+
             var currentBracketContent = bracketContents.CreateNewContentLine(currentLevel);
             
-            currentBracketContent.level = 0;
+            currentBracketContent.Level = 0;
             foreach(var character in formula)
             {
                 if (IgnoreCharacters.Contains(character)) continue;
@@ -40,11 +41,11 @@ namespace MatchBrackets
                 }                
                 else
                 {
-                    currentBracketContent.contents += character.ToString();
+                    currentBracketContent.Contents += character.ToString();
                 }
             }
 
-            return Formatter.Format(bracketContents);
+            return bracketContents;
         }
 
        

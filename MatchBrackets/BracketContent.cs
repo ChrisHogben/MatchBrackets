@@ -2,8 +2,8 @@
 {
     public class BracketContent
     {
-        public int level { get; set; }
-        public string contents { get; set; } = "";
+        public int Level { get; set; }
+        public string Contents { get; set; } = "";
 
         
     }

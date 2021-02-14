@@ -12,12 +12,12 @@ namespace MatchBrackets
             foreach(var bracketContent in bracketContents)
             {
                 var padLeft = "";
-                if (bracketContent.level > 0)
+                if (bracketContent.Level > 0)
                 {                    
-                    padLeft = "".PadLeft(bracketContent.level,'\t');
+                    padLeft = "".PadLeft(bracketContent.Level,'\t');
                 }
                 
-                sbResult.AppendLine($"{padLeft}{bracketContent.contents.TrimStart()}");
+                sbResult.AppendLine($"{padLeft}{bracketContent.Contents.TrimStart()}");
                 
             }
 

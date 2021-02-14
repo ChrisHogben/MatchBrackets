@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace MatchBrackets
 {
@@ -12,13 +8,13 @@ namespace MatchBrackets
 
         public static void AddBracketLine(this List<BracketContent> bracketContents, int level, string content)
         {
-            var nextLine = new BracketContent { level = level, contents = "(" };
+            var nextLine = new BracketContent { Level = level, Contents = content };
             bracketContents.Add(nextLine);
         }
 
         public static BracketContent CreateNewContentLine(this List<BracketContent> bracketContents, int level)
         {
-            var bracketContent = new BracketContent { level = level };
+            var bracketContent = new BracketContent { Level = level };
 
             bracketContents.Add(bracketContent);
 
