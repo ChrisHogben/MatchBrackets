@@ -1,6 +1,6 @@
 ﻿namespace MatchBrackets
 {
-    partial class frmMain
+    partial class FrmMain
     {
         /// <summary>
         /// Required designer variable.
@@ -32,11 +32,15 @@
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabelCountOpenBrackets = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabelCountCloseBrackets = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabelDeepestLevel = new System.Windows.Forms.ToolStripStatusLabel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.lblInput = new System.Windows.Forms.Label();
-            this.lblOutput = new System.Windows.Forms.Label();
             this.txtInput = new System.Windows.Forms.TextBox();
+            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.txtOutput = new System.Windows.Forms.TextBox();
+            this.lblOutput = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
@@ -44,27 +48,24 @@
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripButtonPasteFormula = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonCopyFormula = new System.Windows.Forms.ToolStripButton();
-            this.toolStripStatusLabelDeepestLevel = new System.Windows.Forms.ToolStripStatusLabel();
-            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButtonIncreaseFontSize = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton1DecreaseFontSize = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripContainer1.BottomToolStripPanel.SuspendLayout();
             this.toolStripContainer1.ContentPanel.SuspendLayout();
             this.toolStripContainer1.TopToolStripPanel.SuspendLayout();
             this.toolStripContainer1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
-            this.menuStrip1.SuspendLayout();
-            this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
+            this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // toolStripContainer1
@@ -113,6 +114,11 @@
             this.toolStripStatusLabelCountCloseBrackets.Name = "toolStripStatusLabelCountCloseBrackets";
             this.toolStripStatusLabelCountCloseBrackets.Size = new System.Drawing.Size(0, 17);
             // 
+            // toolStripStatusLabelDeepestLevel
+            // 
+            this.toolStripStatusLabelDeepestLevel.Name = "toolStripStatusLabelDeepestLevel";
+            this.toolStripStatusLabelDeepestLevel.Size = new System.Drawing.Size(0, 17);
+            // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 3;
@@ -133,120 +139,6 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(800, 516);
             this.tableLayoutPanel1.TabIndex = 0;
-            // 
-            // lblInput
-            // 
-            this.lblInput.AutoSize = true;
-            this.lblInput.Location = new System.Drawing.Point(3, 0);
-            this.lblInput.Name = "lblInput";
-            this.lblInput.Size = new System.Drawing.Size(118, 13);
-            this.lblInput.TabIndex = 0;
-            this.lblInput.Text = "Paste your formula here";
-            // 
-            // lblOutput
-            // 
-            this.lblOutput.AutoSize = true;
-            this.lblOutput.Location = new System.Drawing.Point(3, 0);
-            this.lblOutput.Name = "lblOutput";
-            this.lblOutput.Size = new System.Drawing.Size(39, 13);
-            this.lblOutput.TabIndex = 1;
-            this.lblOutput.Text = "Output";
-            // 
-            // txtInput
-            // 
-            this.txtInput.AcceptsReturn = true;
-            this.txtInput.AcceptsTab = true;
-            this.txtInput.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtInput.Location = new System.Drawing.Point(3, 23);
-            this.txtInput.Multiline = true;
-            this.txtInput.Name = "txtInput";
-            this.txtInput.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.txtInput.Size = new System.Drawing.Size(782, 64);
-            this.txtInput.TabIndex = 2;
-            this.txtInput.TextChanged += new System.EventHandler(this.txtInput_TextChanged);
-            // 
-            // txtOutput
-            // 
-            this.txtOutput.AcceptsReturn = true;
-            this.txtOutput.AcceptsTab = true;
-            this.txtOutput.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtOutput.Location = new System.Drawing.Point(3, 23);
-            this.txtOutput.Multiline = true;
-            this.txtOutput.Name = "txtOutput";
-            this.txtOutput.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.txtOutput.Size = new System.Drawing.Size(782, 384);
-            this.txtOutput.TabIndex = 3;
-            // 
-            // menuStrip1
-            // 
-            this.menuStrip1.Dock = System.Windows.Forms.DockStyle.None;
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fileToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(800, 24);
-            this.menuStrip1.TabIndex = 0;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
-            // fileToolStripMenuItem
-            // 
-            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripMenuItem1,
-            this.exitToolStripMenuItem});
-            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
-            this.fileToolStripMenuItem.Text = "File";
-            // 
-            // toolStripMenuItem1
-            // 
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(177, 6);
-            // 
-            // exitToolStripMenuItem
-            // 
-            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.exitToolStripMenuItem.Text = "Exit";
-            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
-            // 
-            // toolStrip1
-            // 
-            this.toolStrip1.Dock = System.Windows.Forms.DockStyle.None;
-            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(32, 32);
-            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripButtonPasteFormula,
-            this.toolStripButtonCopyFormula,
-            this.toolStripSeparator1,
-            this.toolStripButtonIncreaseFontSize,
-            this.toolStripButton1DecreaseFontSize});
-            this.toolStrip1.Location = new System.Drawing.Point(3, 24);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(326, 39);
-            this.toolStrip1.TabIndex = 1;
-            // 
-            // toolStripButtonPasteFormula
-            // 
-            this.toolStripButtonPasteFormula.Image = global::MatchBrackets.Properties.Resources.iconfinder_Clipboard_Circle1;
-            this.toolStripButtonPasteFormula.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButtonPasteFormula.Name = "toolStripButtonPasteFormula";
-            this.toolStripButtonPasteFormula.Size = new System.Drawing.Size(118, 36);
-            this.toolStripButtonPasteFormula.Text = "Paste Formula";
-            this.toolStripButtonPasteFormula.ToolTipText = "Paste Formula";
-            this.toolStripButtonPasteFormula.Click += new System.EventHandler(this.toolStripButtonPasteFormula_Click);
-            // 
-            // toolStripButtonCopyFormula
-            // 
-            this.toolStripButtonCopyFormula.Image = global::MatchBrackets.Properties.Resources.iconfinder_Paste_Circle1;
-            this.toolStripButtonCopyFormula.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButtonCopyFormula.Name = "toolStripButtonCopyFormula";
-            this.toolStripButtonCopyFormula.Size = new System.Drawing.Size(118, 36);
-            this.toolStripButtonCopyFormula.Text = "Copy Formula";
-            this.toolStripButtonCopyFormula.Click += new System.EventHandler(this.toolStripButtonCopyFormula_Click);
-            // 
-            // toolStripStatusLabelDeepestLevel
-            // 
-            this.toolStripStatusLabelDeepestLevel.Name = "toolStripStatusLabelDeepestLevel";
-            this.toolStripStatusLabelDeepestLevel.Size = new System.Drawing.Size(0, 17);
             // 
             // splitContainer1
             // 
@@ -282,6 +174,28 @@
             this.tableLayoutPanel2.Size = new System.Drawing.Size(788, 90);
             this.tableLayoutPanel2.TabIndex = 0;
             // 
+            // lblInput
+            // 
+            this.lblInput.AutoSize = true;
+            this.lblInput.Location = new System.Drawing.Point(3, 0);
+            this.lblInput.Name = "lblInput";
+            this.lblInput.Size = new System.Drawing.Size(118, 13);
+            this.lblInput.TabIndex = 0;
+            this.lblInput.Text = "Paste your formula here";
+            // 
+            // txtInput
+            // 
+            this.txtInput.AcceptsReturn = true;
+            this.txtInput.AcceptsTab = true;
+            this.txtInput.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtInput.Location = new System.Drawing.Point(3, 23);
+            this.txtInput.Multiline = true;
+            this.txtInput.Name = "txtInput";
+            this.txtInput.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.txtInput.Size = new System.Drawing.Size(782, 64);
+            this.txtInput.TabIndex = 2;
+            this.txtInput.TextChanged += new System.EventHandler(this.txtInput_TextChanged);
+            // 
             // tableLayoutPanel3
             // 
             this.tableLayoutPanel3.ColumnCount = 1;
@@ -297,6 +211,94 @@
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel3.Size = new System.Drawing.Size(788, 410);
             this.tableLayoutPanel3.TabIndex = 0;
+            // 
+            // txtOutput
+            // 
+            this.txtOutput.AcceptsReturn = true;
+            this.txtOutput.AcceptsTab = true;
+            this.txtOutput.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtOutput.Location = new System.Drawing.Point(3, 23);
+            this.txtOutput.Multiline = true;
+            this.txtOutput.Name = "txtOutput";
+            this.txtOutput.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.txtOutput.Size = new System.Drawing.Size(782, 384);
+            this.txtOutput.TabIndex = 3;
+            // 
+            // lblOutput
+            // 
+            this.lblOutput.AutoSize = true;
+            this.lblOutput.Location = new System.Drawing.Point(3, 0);
+            this.lblOutput.Name = "lblOutput";
+            this.lblOutput.Size = new System.Drawing.Size(39, 13);
+            this.lblOutput.TabIndex = 1;
+            this.lblOutput.Text = "Output";
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Dock = System.Windows.Forms.DockStyle.None;
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fileToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(800, 24);
+            this.menuStrip1.TabIndex = 0;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // fileToolStripMenuItem
+            // 
+            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem1,
+            this.exitToolStripMenuItem});
+            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
+            this.fileToolStripMenuItem.Text = "File";
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(90, 6);
+            // 
+            // exitToolStripMenuItem
+            // 
+            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(93, 22);
+            this.exitToolStripMenuItem.Text = "Exit";
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
+            // 
+            // toolStrip1
+            // 
+            this.toolStrip1.Dock = System.Windows.Forms.DockStyle.None;
+            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(32, 32);
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripButtonPasteFormula,
+            this.toolStripButtonCopyFormula,
+            this.toolStripSeparator1,
+            this.toolStripButtonIncreaseFontSize,
+            this.toolStripButton1DecreaseFontSize,
+            this.toolStripSeparator2});
+            this.toolStrip1.Location = new System.Drawing.Point(3, 24);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size(363, 39);
+            this.toolStrip1.TabIndex = 1;
+            // 
+            // toolStripButtonPasteFormula
+            // 
+            this.toolStripButtonPasteFormula.Image = global::MatchBrackets.Properties.Resources.iconfinder_Clipboard_Circle1;
+            this.toolStripButtonPasteFormula.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonPasteFormula.Name = "toolStripButtonPasteFormula";
+            this.toolStripButtonPasteFormula.Size = new System.Drawing.Size(118, 36);
+            this.toolStripButtonPasteFormula.Text = "Paste Formula";
+            this.toolStripButtonPasteFormula.ToolTipText = "Paste Formula";
+            this.toolStripButtonPasteFormula.Click += new System.EventHandler(this.toolStripButtonPasteFormula_Click);
+            // 
+            // toolStripButtonCopyFormula
+            // 
+            this.toolStripButtonCopyFormula.Image = global::MatchBrackets.Properties.Resources.iconfinder_Paste_Circle1;
+            this.toolStripButtonCopyFormula.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonCopyFormula.Name = "toolStripButtonCopyFormula";
+            this.toolStripButtonCopyFormula.Size = new System.Drawing.Size(118, 36);
+            this.toolStripButtonCopyFormula.Text = "Copy Formula";
+            this.toolStripButtonCopyFormula.Click += new System.EventHandler(this.toolStripButtonCopyFormula_Click);
             // 
             // toolStripSeparator1
             // 
@@ -324,15 +326,21 @@
             this.toolStripButton1DecreaseFontSize.Text = "-";
             this.toolStripButton1DecreaseFontSize.ToolTipText = "Make the Output font smaller";
             this.toolStripButton1DecreaseFontSize.Click += new System.EventHandler(this.toolStripButton1DecreaseFontSize_Click);
+            this.toolStripButton1DecreaseFontSize.MouseUp += new System.Windows.Forms.MouseEventHandler(this.toolStripButton1DecreaseFontSize_MouseUp);
             // 
-            // Form1
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 39);
+            // 
+            // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 601);
             this.Controls.Add(this.toolStripContainer1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Name = "Form1";
+            this.Name = "frmMain";
             this.Text = "Match Brackets";
             this.toolStripContainer1.BottomToolStripPanel.ResumeLayout(false);
             this.toolStripContainer1.BottomToolStripPanel.PerformLayout();
@@ -344,10 +352,6 @@
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
-            this.toolStrip1.ResumeLayout(false);
-            this.toolStrip1.PerformLayout();
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
@@ -356,6 +360,10 @@
             this.tableLayoutPanel2.PerformLayout();
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel3.PerformLayout();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
+            this.toolStrip1.ResumeLayout(false);
+            this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -385,6 +393,7 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripButton toolStripButtonIncreaseFontSize;
         private System.Windows.Forms.ToolStripButton toolStripButton1DecreaseFontSize;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
     }
 }
 

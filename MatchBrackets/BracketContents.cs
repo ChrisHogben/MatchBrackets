@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 
 namespace MatchBrackets
 {
     public static class BracketContents
     {
-
 
         public static void AddBracketLine(this List<BracketContent> bracketContents, int level, string content)
         {
@@ -21,5 +21,7 @@ namespace MatchBrackets
             return bracketContent;
         }
 
+        public static int DeepestLevel(this IEnumerable<BracketContent> bracketContents)
+            => bracketContents?.Max(x => x.Level)??0;
     }
 }

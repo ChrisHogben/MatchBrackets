@@ -8,3 +8,13 @@ C:\Users\Chris\source\repos\MatchBrackets\MatchBrackets\obj\Debug\MatchBrackets.
 C:\Users\Chris\source\repos\MatchBrackets\MatchBrackets\obj\Debug\MatchBrackets.exe
 C:\Users\Chris\source\repos\MatchBrackets\MatchBrackets\obj\Debug\MatchBrackets.pdb
 C:\Users\Chris\source\repos\MatchBrackets\MatchBrackets\obj\Debug\MatchBrackets.frmMain.resources
+C:\Users\Chris\Documents\GitHub\MatchBrackets\MatchBrackets\bin\Debug\MatchBrackets.exe.config
+C:\Users\Chris\Documents\GitHub\MatchBrackets\MatchBrackets\bin\Debug\MatchBrackets.exe
+C:\Users\Chris\Documents\GitHub\MatchBrackets\MatchBrackets\bin\Debug\MatchBrackets.pdb
+C:\Users\Chris\Documents\GitHub\MatchBrackets\MatchBrackets\obj\Debug\MatchBrackets.csprojAssemblyReference.cache
+C:\Users\Chris\Documents\GitHub\MatchBrackets\MatchBrackets\obj\Debug\MatchBrackets.frmMain.resources
+C:\Users\Chris\Documents\GitHub\MatchBrackets\MatchBrackets\obj\Debug\MatchBrackets.Properties.Resources.resources
+C:\Users\Chris\Documents\GitHub\MatchBrackets\MatchBrackets\obj\Debug\MatchBrackets.csproj.GenerateResource.cache
+C:\Users\Chris\Documents\GitHub\MatchBrackets\MatchBrackets\obj\Debug\MatchBrackets.csproj.CoreCompileInputs.cache
+C:\Users\Chris\Documents\GitHub\MatchBrackets\MatchBrackets\obj\Debug\MatchBrackets.exe
+C:\Users\Chris\Documents\GitHub\MatchBrackets\MatchBrackets\obj\Debug\MatchBrackets.pdb

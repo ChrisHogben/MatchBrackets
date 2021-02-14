@@ -1,14 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
-using System.Linq;
 using System.Windows.Forms;
 
 namespace MatchBrackets
 {
-    public partial class frmMain : Form
+    public partial class FrmMain : Form
     {
-        public frmMain()
+        public FrmMain()
         {
             InitializeComponent();
         }
@@ -21,7 +20,18 @@ namespace MatchBrackets
         
         #endregion menu
 
+        public string GetInput() => txtInput.Text;
 
+        public void SetInput(string input)
+        {
+            txtInput.Text = input;
+        }
+
+        public string GetOutput() => txtOutput.Text;
+        private void SetOutput(string output)
+        {
+            txtOutput.Text = output;
+        }
         #region tool strip buttons
         private void toolStripButtonPasteFormula_Click(object sender, EventArgs e)
         {
@@ -35,64 +45,61 @@ namespace MatchBrackets
 
         private void toolStripButtonIncreaseFontSize_Click(object sender, EventArgs e)
         {
-            txtOutput.Font = new Font(txtOutput.Font.Name, txtOutput.Font.SizeInPoints + 3f);
+            txtOutput.IncreaseFontSize();
         }
 
         private void toolStripButton1DecreaseFontSize_Click(object sender, EventArgs e)
         {
-            var currentSize = txtOutput.Font.SizeInPoints;
-            if (currentSize < 8) return;
-            txtOutput.Font = new Font(txtOutput.Font.Name, txtOutput.Font.SizeInPoints - 3f);
+           txtOutput.DecreaseFontSize();
+        }
+        private void toolStripButton1DecreaseFontSize_MouseUp(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right)
+            {
+                txtOutput.SetFontSize(txtInput.Font.Size);
+            }
         }
 
         #endregion tool strip buttons
+
 
 
         private void PasteFormula()
         {
             if (!Clipboard.ContainsText()) return;
             var text = Clipboard.GetText();
-            txtInput.Text = text;
-            txtOutput.Clear();
-
-            //just paste for now.
-            //ProcessMatchBrackets();
-
-            //var output = txtOutput.Text;
-            //if (!string.IsNullOrEmpty(output))
-            //{
-            //    CopyFormula();
-            //}
-
+            SetInput(text);
+            
         }
 
         private void CopyFormula()
         {
             Clipboard.Clear();
-            Clipboard.SetText(txtOutput.Text);
+            Clipboard.SetText(GetOutput());
         }
 
 
-        private void ProcessMatchBrackets()
+        private void MatchBracketsUp()
         {
-            var bracketContents = MatchBrackets.ProcessText(txtInput.Text);
+            var input = GetInput();
+            var bracketContents = MatchBrackets.ProcessText(input);
 
             var output = Formatter.Format(bracketContents);
-            txtOutput.Text = output;
-            GenerateStats(txtInput.Text, bracketContents);
+            SetOutput(output);
+
+            DescribeInput(input, bracketContents);
         }
 
         private void txtInput_TextChanged(object sender, EventArgs e)
         {
-            ProcessMatchBrackets();
+            MatchBracketsUp();
         }
 
-        private void GenerateStats(string input, IEnumerable<BracketContent>bracketContents)
+        private void DescribeInput(string input, IEnumerable<BracketContent>bracketContents)
         {
             var openBrackets = 0;
             var closeBrackets = 0;
 
-   
             foreach (var character in input)
             {
                 switch (character)
@@ -127,7 +134,7 @@ namespace MatchBrackets
 
             if (openBrackets+closeBrackets!=0)
             {
-                var deepestLevel = bracketContents.Max(x => x.Level);
+                var deepestLevel = bracketContents.DeepestLevel();
                 toolStripStatusLabelDeepestLevel.Text = "Deepest Level " + deepestLevel;
             }
             else
@@ -137,6 +144,6 @@ namespace MatchBrackets
             
         }
 
-      
+        
     }
 }
