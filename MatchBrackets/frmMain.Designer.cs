@@ -47,11 +47,12 @@
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripButtonPasteFormula = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButtonCopyFormula = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButtonCopyResult = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButtonIncreaseFontSize = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton1DecreaseFontSize = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripComboBoxBracketsMode = new System.Windows.Forms.ToolStripComboBox();
             this.toolStripContainer1.BottomToolStripPanel.SuspendLayout();
             this.toolStripContainer1.ContentPanel.SuspendLayout();
             this.toolStripContainer1.TopToolStripPanel.SuspendLayout();
@@ -256,12 +257,12 @@
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(90, 6);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(177, 6);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(93, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -271,14 +272,15 @@
             this.toolStrip1.ImageScalingSize = new System.Drawing.Size(32, 32);
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripButtonPasteFormula,
-            this.toolStripButtonCopyFormula,
+            this.toolStripButtonCopyResult,
             this.toolStripSeparator1,
             this.toolStripButtonIncreaseFontSize,
             this.toolStripButton1DecreaseFontSize,
-            this.toolStripSeparator2});
+            this.toolStripSeparator2,
+            this.toolStripComboBoxBracketsMode});
             this.toolStrip1.Location = new System.Drawing.Point(3, 24);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(363, 39);
+            this.toolStrip1.Size = new System.Drawing.Size(476, 39);
             this.toolStrip1.TabIndex = 1;
             // 
             // toolStripButtonPasteFormula
@@ -291,14 +293,14 @@
             this.toolStripButtonPasteFormula.ToolTipText = "Paste Formula";
             this.toolStripButtonPasteFormula.Click += new System.EventHandler(this.toolStripButtonPasteFormula_Click);
             // 
-            // toolStripButtonCopyFormula
+            // toolStripButtonCopyResult
             // 
-            this.toolStripButtonCopyFormula.Image = global::MatchBrackets.Properties.Resources.iconfinder_Paste_Circle1;
-            this.toolStripButtonCopyFormula.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButtonCopyFormula.Name = "toolStripButtonCopyFormula";
-            this.toolStripButtonCopyFormula.Size = new System.Drawing.Size(118, 36);
-            this.toolStripButtonCopyFormula.Text = "Copy Formula";
-            this.toolStripButtonCopyFormula.Click += new System.EventHandler(this.toolStripButtonCopyFormula_Click);
+            this.toolStripButtonCopyResult.Image = global::MatchBrackets.Properties.Resources.iconfinder_Paste_Circle1;
+            this.toolStripButtonCopyResult.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonCopyResult.Name = "toolStripButtonCopyResult";
+            this.toolStripButtonCopyResult.Size = new System.Drawing.Size(106, 36);
+            this.toolStripButtonCopyResult.Text = "Copy Result";
+            this.toolStripButtonCopyResult.Click += new System.EventHandler(this.toolStripButtonCopyFormula_Click);
             // 
             // toolStripSeparator1
             // 
@@ -333,14 +335,28 @@
             this.toolStripSeparator2.Name = "toolStripSeparator2";
             this.toolStripSeparator2.Size = new System.Drawing.Size(6, 39);
             // 
-            // frmMain
+            // toolStripComboBoxBracketsMode
+            // 
+            this.toolStripComboBoxBracketsMode.Items.AddRange(new object[] {
+            "()",
+            "[]",
+            "{}",
+            "([{}])"});
+            this.toolStripComboBoxBracketsMode.Name = "toolStripComboBoxBracketsMode";
+            this.toolStripComboBoxBracketsMode.Size = new System.Drawing.Size(121, 39);
+            this.toolStripComboBoxBracketsMode.ToolTipText = "Brackets Mode";
+            this.toolStripComboBoxBracketsMode.SelectedIndexChanged += new System.EventHandler(this.toolStripComboBoxBracketsMode_SelectedIndexChanged);
+            this.toolStripComboBoxBracketsMode.Click += new System.EventHandler(this.toolStripComboBoxBracketsMode_Click);
+            this.toolStripComboBoxBracketsMode.TextChanged += new System.EventHandler(this.toolStripComboBoxBracketsMode_TextChanged);
+            // 
+            // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 601);
             this.Controls.Add(this.toolStripContainer1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Name = "frmMain";
+            this.Name = "FrmMain";
             this.Text = "Match Brackets";
             this.toolStripContainer1.BottomToolStripPanel.ResumeLayout(false);
             this.toolStripContainer1.BottomToolStripPanel.PerformLayout();
@@ -385,7 +401,7 @@
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabelCountOpenBrackets;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabelCountCloseBrackets;
-        private System.Windows.Forms.ToolStripButton toolStripButtonCopyFormula;
+        private System.Windows.Forms.ToolStripButton toolStripButtonCopyResult;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabelDeepestLevel;
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
@@ -394,6 +410,7 @@
         private System.Windows.Forms.ToolStripButton toolStripButtonIncreaseFontSize;
         private System.Windows.Forms.ToolStripButton toolStripButton1DecreaseFontSize;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+        private System.Windows.Forms.ToolStripComboBox toolStripComboBoxBracketsMode;
     }
 }
 

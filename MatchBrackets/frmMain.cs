@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Linq;
 using System.Windows.Forms;
+using MatchBrackets.BracketsMode;
 
 namespace MatchBrackets
 {
@@ -10,6 +12,7 @@ namespace MatchBrackets
         public FrmMain()
         {
             InitializeComponent();
+            toolStripComboBoxBracketsMode.SelectedItem = "()";
         }
 
         #region menu
@@ -32,6 +35,21 @@ namespace MatchBrackets
         {
             txtOutput.Text = output;
         }
+
+        public IBracketType GetSelectedBracketsType()
+        {
+            var selectedText = toolStripComboBoxBracketsMode.SelectedItem.ToString();
+            var availableBracketTypes = new List<IBracketType>
+            {
+                new CurlyBrackets(), new NormalBrackets(), new SquareBracketType(), new MixedBrackets()
+            };
+            var selectedBracketType = availableBracketTypes.FirstOrDefault(x => x.Display == selectedText)??new NormalBrackets();
+
+            return selectedBracketType;
+
+        }
+
+
         #region tool strip buttons
         private void toolStripButtonPasteFormula_Click(object sender, EventArgs e)
         {
@@ -82,7 +100,8 @@ namespace MatchBrackets
         private void MatchBracketsUp()
         {
             var input = GetInput();
-            var bracketContents = MatchBrackets.ProcessText(input);
+            var bracketType = GetSelectedBracketsType();
+            var bracketContents = MatchBrackets.ProcessText(input, bracketType);
 
             var output = Formatter.Format(bracketContents);
             SetOutput(output);
@@ -144,6 +163,20 @@ namespace MatchBrackets
             
         }
 
-        
+        private void toolStripComboBoxBracketsMode_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            MatchBracketsUp();
+        }
+
+        private void toolStripComboBoxBracketsMode_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void toolStripComboBoxBracketsMode_TextChanged(object sender, EventArgs e)
+        {
+            MatchBracketsUp();
+        }
     }
+
 }

@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using MatchBrackets.BracketsMode;
 
 namespace MatchBrackets
 {
@@ -7,7 +8,12 @@ namespace MatchBrackets
     {
         private const string IgnoreCharacters = "\t\r\n";
 
-        public static List<BracketContent> ProcessText(string formula)
+        
+
+
+
+
+        public static List<BracketContent> ProcessText(string formula, IBracketType bracketType)
         {
             
             
@@ -22,19 +28,21 @@ namespace MatchBrackets
             {
                 if (IgnoreCharacters.Contains(character)) continue;
 
-                if (character == '(')
+                //if (character == '(')
+                if(bracketType.OpeningBrackets.Contains(character))
                 {
                     currentLevel++;
                     //place the bracket on the next line by itself
-                    bracketContents.AddBracketLine(currentLevel,"(");
+                    bracketContents.AddBracketLine(currentLevel,character.ToString());
                     
                     currentBracketContent = bracketContents.CreateNewContentLine(currentLevel);
                 }
-                else if (character == ')')
+                //else if (character == ')')
+                else if(bracketType.ClosingBrackets.Contains(character))
                 {
 
                     //place the bracket on the next line by itself
-                    bracketContents.AddBracketLine(currentLevel, ")");
+                    bracketContents.AddBracketLine(currentLevel, character.ToString());
                     
                     currentLevel--;
                     currentBracketContent=bracketContents.CreateNewContentLine(currentLevel);
@@ -49,5 +57,6 @@ namespace MatchBrackets
         }
 
        
+        
     }
 }
